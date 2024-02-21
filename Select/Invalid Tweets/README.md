@@ -3,6 +3,7 @@
 
 Problem Link = "https://leetcode.com/problems/invalid-tweets/"
 
+Table: Tweets
 
 | Column Name | Type    |
 |-------------|---------|
