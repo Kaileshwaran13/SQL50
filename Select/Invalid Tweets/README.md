@@ -1,43 +1,48 @@
-# 1491. Average Salary Excluding the Minimum and Maximum Salary
+# 1683. Invalid Tweets
 
 
-Problem Link = "https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/"
+Problem Link = "https://leetcode.com/problems/invalid-tweets/"
 
-You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
 
-Return the average salary of employees excluding the minimum and maximum salary. Answers within 10-5 of the actual answer will be accepted.
++----------------+---------+
+| Column Name    | Type    |
++----------------+---------+
+| tweet_id       | int     |
+| content        | varchar |
++----------------+---------+
+
+tweet_id is the primary key (column with unique values) for this table.
+This table contains all the tweets in a social media app.
+ 
+
+Write a solution to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is strictly greater than 15.
+
+Return the result table in any order.
+
+The result format is in the following example.
 
  
 
 # Example 1:
 
+Input: 
 
-Input: salary = [4000,3000,1000,2000]
+Tweets table:
++----------+----------------------------------+
+| tweet_id | content                          |
++----------+----------------------------------+
+| 1        | Vote for Biden                   |
+| 2        | Let us make America great again! |
++----------+----------------------------------+
 
-Output: 2500.00000
+Output: 
++----------+
+| tweet_id |
++----------+
+| 2        |
++----------+
 
-Explanation: Minimum salary and maximum salary are 1000 and 4000 respectively.
+# Explanation: 
 
-Average salary excluding minimum and maximum salary is (2000+3000) / 2 = 2500
-
-
-# Example 2:
-
-
-Input: salary = [1000,2000,3000]
-
-Output: 2000.00000
-
-Explanation: Minimum salary and maximum salary are 1000 and 3000 respectively.
-
-Average salary excluding minimum and maximum salary is (2000) / 1 = 2000
-
- 
-
-# Constraints:
-
-- 3 <= salary.length <= 100
- 
-- 1000 <= salary[i] <= 10^6
- 
-- All the integers of salary are unique.
+Tweet 1 has length = 14. It is a valid tweet.
+Tweet 2 has length = 32. It is an invalid tweet.
