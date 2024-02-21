@@ -1,43 +1,50 @@
-# 1491. Average Salary Excluding the Minimum and Maximum Salary
+# 1757. Recyclable and Low Fat Products
+
+Problem Link = "https://leetcode.com/problems/recyclable-and-low-fat-products/"
+
+Table: Products
 
 
-Problem Link = "https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/"
+| Column Name | Type    |
+|-------------|---------|
+| product_id  | int     |
+| low_fats    | enum    |
+| recyclable  | enum    |
 
-You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
+product_id is the primary key (column with unique values) for this table.
 
-Return the average salary of employees excluding the minimum and maximum salary. Answers within 10-5 of the actual answer will be accepted.
+low_fats is an ENUM (category) of type ('Y', 'N') where 'Y' means this product is low fat and 'N' means it is not.
 
- 
+recyclable is an ENUM (category) of types ('Y', 'N') where 'Y' means this product is recyclable and 'N' means it is not.
+
+
+Write a solution to find the ids of products that are both low fat and recyclable.
+
+Return the result table in any order.
+
+The result format is in the following example.
 
 # Example 1:
 
+Input: 
 
-Input: salary = [4000,3000,1000,2000]
+Products table:
 
-Output: 2500.00000
+| product_id  | low_fats | recyclable |
+|-------------|----------|------------|
+| 0           | Y        | N          |
+| 1           | Y        | Y          |
+| 2           | N        | Y          |
+| 3           | Y        | Y          |
+| 4           | N        | N          |
 
-Explanation: Minimum salary and maximum salary are 1000 and 4000 respectively.
+Output: 
 
-Average salary excluding minimum and maximum salary is (2000+3000) / 2 = 2500
+| product_id  |
+|-------------|
+| 1           |
+| 3           |
 
+# Explanation:
 
-# Example 2:
-
-
-Input: salary = [1000,2000,3000]
-
-Output: 2000.00000
-
-Explanation: Minimum salary and maximum salary are 1000 and 3000 respectively.
-
-Average salary excluding minimum and maximum salary is (2000) / 1 = 2000
-
- 
-
-# Constraints:
-
-- 3 <= salary.length <= 100
- 
-- 1000 <= salary[i] <= 10^6
- 
-- All the integers of salary are unique.
+Only products 1 and 3 are both low fat and recyclable.
