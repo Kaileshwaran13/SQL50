@@ -2,7 +2,7 @@
 
 Problem Link = "https://leetcode.com/problems/article-views-i/"
 
-Table:World
+Table: World
 
 | Column Name   | Type    |
 |---------------|---------|
