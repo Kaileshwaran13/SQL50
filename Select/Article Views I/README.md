@@ -28,7 +28,7 @@ The result format is in the following example.
 
 # Example 1:
 
-# Input: 
+Input: 
 
 Views table:
 
@@ -42,7 +42,7 @@ Views table:
 | 3          | 4         | 4         | 2019-07-21 |
 | 3          | 4         | 4         | 2019-07-21 |
 
-# Output: 
+Output: 
 
 | id   |
 |------|
