@@ -1,43 +1,50 @@
-# 1491. Average Salary Excluding the Minimum and Maximum Salary
+# 1148. Article Views I
+
+Problem Link = "https://leetcode.com/problems/article-views-i/"
 
 
-Problem Link = "https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/"
+| Column Name   | Type    |
+|---------------|---------|
+| article_id    | int     |
+| author_id     | int     |
+| viewer_id     | int     |
+| view_date     | date    |
 
-You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
 
-Return the average salary of employees excluding the minimum and maximum salary. Answers within 10-5 of the actual answer will be accepted.
+There is no primary key (column with unique values) for this table, the table may have duplicate rows.
+
+Each row of this table indicates that some viewer viewed an article (written by some author) on some date. 
+
+Note that equal author_id and viewer_id indicate the same person.
+ 
+
+Write a solution to find all the authors that viewed at least one of their own articles.
+
+Return the result table sorted by id in ascending order.
+
+The result format is in the following example.
 
  
 
 # Example 1:
 
+# Input: 
 
-Input: salary = [4000,3000,1000,2000]
+Views table:
 
-Output: 2500.00000
+| article_id | author_id | viewer_id | view_date  |
+|------------|-----------|-----------|------------|
+| 1          | 3         | 5         | 2019-08-01 |
+| 1          | 3         | 6         | 2019-08-02 |
+| 2          | 7         | 7         | 2019-08-01 |
+| 2          | 7         | 6         | 2019-08-02 |
+| 4          | 7         | 1         | 2019-07-22 |
+| 3          | 4         | 4         | 2019-07-21 |
+| 3          | 4         | 4         | 2019-07-21 |
 
-Explanation: Minimum salary and maximum salary are 1000 and 4000 respectively.
+# Output: 
 
-Average salary excluding minimum and maximum salary is (2000+3000) / 2 = 2500
-
-
-# Example 2:
-
-
-Input: salary = [1000,2000,3000]
-
-Output: 2000.00000
-
-Explanation: Minimum salary and maximum salary are 1000 and 3000 respectively.
-
-Average salary excluding minimum and maximum salary is (2000) / 1 = 2000
-
- 
-
-# Constraints:
-
-- 3 <= salary.length <= 100
- 
-- 1000 <= salary[i] <= 10^6
- 
-- All the integers of salary are unique.
+| id   |
+|------|
+| 4    |
+| 7    |
